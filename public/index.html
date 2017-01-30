@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Buscador</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+    <link rel="stylesheet" href="./css/index.css">
+  </head>
+  <body ng-app="app">
+    <div class="container" ng-controller="filmCtrl">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <h2>BUSCADOR DE PELICULAS</h2>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-3">
+            <button class="btn btn-primary" ng-click="showPopularFilms()"> Mostar las películas más populares </button>
+          </div>
+          <div class="col-xs-9">
+            <label id="filmTitleFont">Titulo de la pelicula</label>
+            <input class="film form" id="filmTitleInput">
+            <button class="btn btn-primary" ng-click="showByTitle()"  class>Buscar</button>
+          </div>
+        </div>
+        <hr>
+        <a class="film form-control" ng-click="setFilm(result)" href="filmDetail.html" ng-repeat="result in results">
+          <label>{{result.original_title}}</label>
+        </a>
+        <div ng-hide="noFilmSelected" class="row text-center">
+          <hr>
+          <a class="btn btn-primary" href="filmDetail.html"> Ver detalles</a>
+        </div>
+      </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="filmController.js"></script>
+  </body>
+</html>

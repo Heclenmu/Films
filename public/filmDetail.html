@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Buscador</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+    <link rel="stylesheet" href="./css/filmDetail.css">
+  </head>
+  <body ng-app="app">
+    <div class="container" ng-controller="filmDetailCtrl">
+      <div class="row text-center">
+        <h1>Información extra de la pelicula</h1>
+      </div>
+      <hr>
+      <div class="container-fluid" ng-init="getFilm()">
+        <div class="row">
+             <div class="col-xs-8">
+                <label>Titulo original</label>
+                <label class="form-control">{{movieInfo.original_title}}</label>
+             </div>
+             <div class="col-xs-2">
+               <label>Idioma original</label>
+               <label class="form-control"> {{movieInfo.original_language}} </label>
+             </div>
+             <div class="col-xs-2">
+               <label>Fecha de estreno</label>
+               <label class="form-control"> {{movieInfo.release_date}} </label>
+             </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-2">
+            <label>Nota media</label>
+            <label class="form-control"> {{movieInfo.vote_average}} </label>
+          </div>
+          <div class="col-xs-2">
+            <label>Votos totales</label>
+            <label class="form-control"> {{movieInfo.vote_count}} </label>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+             <div class="col-xs-12">
+               <label>Descripción</label>
+               <label id="overviewField" class="form-control">{{movieInfo.overview}}</label>
+             </div>
+        </div>
+        <hr>
+        <div class="row text-center">
+          <a class="btn btn-primary" href="searchFilms.html">Atrás</a>
+        </div>
+      </div>
+    </div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="filmController.js"></script>
+  </body>
+</html>

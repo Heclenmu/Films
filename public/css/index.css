@@ -1,0 +1,16 @@
+ .film{
+  border: 2px solid #696269;
+  margin-top: 2px;
+  margin-bottom: 2px;
+ }
+
+ #filmTitleInput{
+   width: 500px;
+   height: 35px;
+ }
+
+ #filmTitleFont{
+   width: 250px;
+   margin-bottom: 0px;
+   font-size: 25px;
+ }
